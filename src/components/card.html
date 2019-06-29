@@ -1,0 +1,49 @@
+<style>
+    .card {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid;
+        text-align: center;
+    }
+
+    .card .title {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .card .text {
+        font-size: 12px;
+    }
+</style>
+
+
+
+<template id="card-template">
+    <div class="card">
+        <div class="title">{{title}}</div>
+        <p class="text">{{text}}</p>
+    </div>
+</template>
+
+
+
+<script type="application/javascript">
+    const model = {
+        title: "title",
+        text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur officiis nulla eius ullam cumque
+                    cupiditate
+                    voluptatem non sunt repudiandae excepturi quos hic, unde, amet nostrum optio perspiciatis corrupti iusto
+                    rerum?`
+    }
+
+    const html = render(model);
+
+    for (let i = 0; i < 100; i++) {
+        let elem = htmlToElement(html);
+        document.getElementById('app').appendChild(elem);
+    }
+
+</script>
